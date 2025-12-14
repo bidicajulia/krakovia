@@ -1,68 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap');
 
-
 body {
-margin: 0;
-font-family: 'Raleway', sans-serif;
-background: linear-gradient(to bottom, #1e3c72, #2a5298);
-color: #fff;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    /* Culori de iarnă/Crăciun */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298); 
+    color: #fff;
+    min-height: 100vh; /* Asigură că background-ul acoperă toată pagina */
+    display: flex; /* Folosit pentru a centra bine intro-ul */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
-
 
 .hidden { display: none; }
 
-
+/* --- INTRO PAGE STYLES --- */
 .intro {
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-position: relative;
+    width: 100%;
+    /* În loc de height: 100vh; pentru a permite centrarea de body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
 }
-
 
 .intro-content {
-z-index: 2;
-padding: 20px;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1); /* Să iasă în evidență puțin pe fundal */
+    border-radius: 15px;
 }
 
-
-h1 { font-size: 8vw; margin-bottom: 10px; }
+h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 .subtitle { font-size: 1.4rem; margin-bottom: 30px; }
 
-
 #startBtn {
-padding: 18px 36px;
-font-size: 1.2rem;
-border: none;
-border-radius: 14px;
-background: #c62828;
-color: white;
-font-weight: bold;
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 14px;
+    background: #c62828; /* Roșu Crăciun */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Adaugă tranziție */
 }
 
+#startBtn:hover {
+    background: #a92020; /* Roșu mai închis la hover */
+    transform: scale(1.05);
+}
 
+/* --- QUIZ + RESULT STYLES --- */
 .quiz-container, #result-box {
-background: #fff;
-color: #333;
-max-width: 90%;
-margin: 40px auto;
-padding: 30px;
-border-radius: 18px;
-text-align: center;
+    background: #fff;
+    color: #333;
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+.quiz-container h2 {
+    color: #c62828;
+}
+
+#question-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column; /* Răspunsurile stau unul sub altul pe mobil */
+    gap: 10px;
+}
 
 #answers button {
-margin: 10px;
-padding: 14px 22px;
-border: none;
-border-radius: 10px;
-background: #2a5298;
-color: #fff;
+    margin: 5px 0; /* Mai puțin margin, mai mult gap */
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #2a5298; /* Albastru */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Adaugă tranziție */
 }
 
+#answers button:hover {
+    background: #1e3c72; /* Albastru mai închis la hover */
+    transform: translateY(-2px); /* Efect 3D ușor */
+}
+
+/* Stiluri pentru REVEAL */
+#result-box h2 {
+    color: #c62828;
+    font-size: 2rem;
+}
+#result-box h3 {
+    color: #2a5298;
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+.reveal-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
 
 .ticket-img {
+    width: 100%;
+    max-width: 400px; /* Să nu fie prea mare */
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.final-message {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Opțional: Adaugă niște zăpadă simbolică */
+.snow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(white 1px, transparent 1px),
+                      radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    animation: snow-fall 10s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+@keyframes snow-fall {
+    from {
+        background-position: 0 0, 25px 25px;
+    }
+    to {
+        background-position: 50px 100vh, 75px 100vh;
+    }
 }
