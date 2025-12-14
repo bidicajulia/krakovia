@@ -7,9 +7,7 @@ body {
     background: linear-gradient(to bottom, #1e3c72, #2a5298); 
     color: #fff;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Eliminăm display: flex; de pe body pentru a nu interfera cu quiz-ul */
     padding: 0;
 }
 
@@ -18,8 +16,8 @@ body {
 /* --- INTRO PAGE STYLES --- */
 .intro {
     width: 100%;
-    /* Flexbox permite centrarea de către body */
-    display: flex;
+    height: 100vh; /* Asigură că ecranul intro ocupă înălțimea completă */
+    display: flex; /* Folosim flexbox DOAR pe intro pentru centrare */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -60,6 +58,8 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
     color: #333;
     max-width: 600px;
     width: 90%;
+    /* margin: 40px auto; face centrul */
+    margin: 40px auto;
     padding: 30px;
     border-radius: 18px;
     text-align: center;
@@ -116,7 +116,7 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 
 .ticket-img {
     width: 100%;
-    max-width: 90%; /* Imagine mai mare pe desktop */
+    max-width: 90%; 
     height: auto;
     border-radius: 12px;
     margin: 30px auto;
@@ -136,15 +136,15 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
     height: 100%;
     top: 0;
     left: 0;
-    /* Creează puncte albe, mai mari (2px) */
+    /* Zăpadă mare (2px) */
     background-image: radial-gradient(white 2px, transparent 2px), 
                       radial-gradient(white 2px, transparent 2px);
-    background-size: 80px 80px; /* Spațiu mai mare între fulgi */
+    background-size: 80px 80px; 
     background-position: 0 0, 40px 40px; 
     animation: snow-fall 15s linear infinite; 
     z-index: 1;
     pointer-events: none;
-    opacity: 0.8; /* Zăpadă mai vizibilă */
+    opacity: 0.8; 
 }
 
 @keyframes snow-fall {
@@ -152,7 +152,6 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
         background-position: 0 0, 40px 40px;
     }
     to {
-        /* Mișcă zăpada în jos */
         background-position: 80px 100vh, 120px 100vh;
     }
 }
@@ -160,7 +159,7 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 /* --- RESPONSIVE / MOBIL --- */
 @media (max-width: 600px) {
     .ticket-img {
-        max-width: 100%; /* Imaginea biletelor ocupă lățimea maximă pe mobil */
+        max-width: 100%; 
     }
     
     .quiz-container, #result-box {
