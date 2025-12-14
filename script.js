@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Definirea întrebărilor
     const questions = [
         {
-            text: "Unde mergem de Crăciun?",
+            text: "U",
             answers: ["Acasă", "La munte", "Într-un oraș european", "Surpriză"],
             correct: 3
         },
