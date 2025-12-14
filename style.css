@@ -136,11 +136,12 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
     height: 100%;
     top: 0;
     left: 0;
+    /* Creează puncte albe ca fulgi de zăpadă */
     background-image: radial-gradient(white 1px, transparent 1px),
                       radial-gradient(white 1px, transparent 1px);
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px;
-    animation: snow-fall 10s linear infinite;
+    animation: snow-fall 15s linear infinite; /* Am mărit durata pentru un efect mai subtil */
     z-index: 1;
     pointer-events: none;
     opacity: 0.6;
@@ -151,6 +152,7 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
         background-position: 0 0, 25px 25px;
     }
     to {
-        background-position: 50px 100vh, 75px 100vh;
+        /* Mișcă zăpada în jos */
+        background-position: 50px 100vh, 75px 100vh; 
     }
 }
