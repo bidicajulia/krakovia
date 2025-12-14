@@ -116,7 +116,7 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 
 .ticket-img {
     width: 100%;
-    max-width: 90%; 
+    max-width: 100%; 
     height: auto;
     border-radius: 12px;
     margin: 30px auto;
