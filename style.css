@@ -116,7 +116,7 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 
 .ticket-img {
     width: 100%;
-    max-width: 400px; /* Să nu fie prea mare */
+    max-width: 600px; /* Să nu fie prea mare */
     height: auto;
     border-radius: 12px;
     margin-top: 20px;
@@ -137,8 +137,8 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
     top: 0;
     left: 0;
     /* Creează puncte albe ca fulgi de zăpadă */
-    background-image: radial-gradient(white 1px, transparent 1px),
-                      radial-gradient(white 1px, transparent 1px);
+    background-image: radial-gradient(white 10px, transparent 1px),
+                      radial-gradient(white 10px, transparent 1px);
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px;
     animation: snow-fall 15s linear infinite; /* Am mărit durata pentru un efect mai subtil */
