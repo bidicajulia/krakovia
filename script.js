@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         } else {
-            alert("Mai încearcă, merită! 😉");
+            alert("Mai încearcă ! 😉");
         }
     }
 });
