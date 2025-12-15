@@ -11,7 +11,9 @@ body {
     padding: 0;
 }
 
-.hidden { display: none; }
+.hidden { 
+    display: none !important; /* Forțăm ascunderea elementului */
+}
 
 /* --- INTRO PAGE STYLES --- */
 .intro {
@@ -56,9 +58,8 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 .quiz-container, #result-box {
     background: #fff;
     color: #333;
-    max-width: 700px;
+    max-width: 750px; /* Mărim puțin containerul general */
     width: 97%;
-    /* margin: 40px auto; face centrul */
     margin: 40px auto;
     padding: 30px;
     border-radius: 18px;
@@ -114,13 +115,26 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
     font-weight: 800;
 }
 
-.ticket-img {
-    width: 100%;
-    max-width: 700px; 
-    height: auto;
-    border-radius: 12px;
+/* NOU: Containerul pentru pozele de la final (Bilete + Hotel) */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; /* Spațiu între cele două poze */
     margin: 30px auto;
 }
+
+/* NOU: Stilul imaginii (înlocuiește .ticket-img) */
+.reveal-image {
+    width: 100%;
+    max-width: 350px; /* Lățimea individuală pe desktop (350px + 350px + gap = 720px, se potrivește în container) */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* .ticket-img NU mai este necesar și poate fi șters. */
+
 
 .final-message {
     margin-top: 25px;
@@ -157,17 +171,14 @@ h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 10px; }
 }
 
 /* --- RESPONSIVE / MOBIL --- */
-@media (max-width: 600px) {
-    .ticket-img {
-        max-width: 100%; 
+@media (max-width: 750px) { /* Am schimbat media query să se aplice la lățimea containerului */
+    .reveal-image {
+        max-width: 100%; /* Pe mobil, imaginile se vor extinde și vor trece una sub alta */
     }
     
     .quiz-container, #result-box {
         margin: 20px auto;
         padding: 20px 15px;
+        width: 95%;
     }
-}
-
-.hidden { 
-    display: none !important; /* Forțăm ascunderea elementului */
 }
