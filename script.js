@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             correct: 3 
         },
         {
-            text: "care este cea mai apropiata mancare traditionala de "sarmale" ?",
+            text: "care este cea mai apropiata mancare traditionala de sarmale ?",
             answers: ["dolma", "gołąbki ", "holubtsi", "pierogi"],
             correct: "all"
         },
