@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             correct: 3 
         },
         {
-            text: "Ce nu trebuie să lipsească din bagaj?",
-            answers: ["Bună dispoziție", "Poze", "Plimbări", "Toate"],
-            correct: 3 
-        },
-        {
-            text: "care este cea mai apropiata mancare traditionala de sarmale ?",
+            text: "Care este cea mai apropiata mancare traditionala de sarmale ?",
             answers: ["dolma", "gołąbki ", "holubtsi", "pierogi"],
             correct: "all"
+        },
+        {
+            text: "Care este cea mai apropiata moneda ca valoare de LEU? ",
+            answers: ["MDL (leu moldovenesc)", "BGN (leva)", "PLN (zlot polonez)", "HUF (forint maghiar)"],
+            correct: 2
         },
         {
             text: "Sunteti gata de surpriza?",
