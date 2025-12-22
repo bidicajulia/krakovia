@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             correct: "all"
         },
         {
+            text: "Care e cuvantul cheie pentru acest cadou ?",
+            answers: ["cheful ", "telefonul " , "hainele groase", "toate de mai sus"],
+            correct: 3
+        }
+        {
             text: "Care este cea mai apropiata moneda ca valoare de LEU? ",
             answers: ["MDL (leu moldovenesc)", "BGN (leva)", "PLN (zlot polonez)", "HUF (forint maghiar)"],
             correct: 2
